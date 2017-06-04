@@ -5,7 +5,7 @@ package com.example.geolocation;
  * @author Jorge Vasquez
  * @since 1.8
  */
-class Student extends AbstractEntity {
+class Student extends Entity {
 
     /**
      * Creates a new instance of Student.

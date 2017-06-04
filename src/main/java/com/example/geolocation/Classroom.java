@@ -8,7 +8,7 @@ import java.util.Map;
  * @author Jorge Vasquez
  * @since 1.8
  */
-public class Classroom extends AbstractEntity {
+public class Classroom extends Entity {
 
     public static final int SIZE = 20;
 

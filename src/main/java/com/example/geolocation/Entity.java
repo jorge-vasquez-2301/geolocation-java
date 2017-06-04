@@ -1,21 +1,21 @@
 package com.example.geolocation;
 
 /**
- * The AbstractEntity class.
+ * The Entity class.
  * @author Jorge Vasquez
  * @since 1.8
  */
-class AbstractEntity {
+class Entity {
 
     private final String name;
     private final Coordinates coordinates;
 
     /**
-     * Constructor for AbstractEntity.
+     * Constructor for Entity.
      * @param name        the entity's name
      * @param coordinates the entity's coordinates(latitude/longitude)
      */
-    AbstractEntity(String name, Coordinates coordinates) {
+    protected Entity(String name, Coordinates coordinates) {
         this.name = name;
         this.coordinates = coordinates;
     }
