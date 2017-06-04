@@ -20,7 +20,7 @@ class ClassroomCoordinatesCalculator {
     ClassroomCoordinatesCalculator(Coordinates classroomCoordinates) {
         centerCoordinatesInRadians = new Coordinates(FastMath.toRadians(classroomCoordinates.getLatitude()),
                                                      FastMath.toRadians(classroomCoordinates.getLongitude()));
-        distanceFromCenterToCorner = FastMath.sqrt((Classroom.SIZE / 2) * (Classroom.SIZE / 2));
+        distanceFromCenterToCorner = FastMath.sqrt(2 * (Classroom.SIZE / 2) * (Classroom.SIZE / 2));
     }
 
     Coordinates getCornerCoordinates(Classroom.Corner corner) {
