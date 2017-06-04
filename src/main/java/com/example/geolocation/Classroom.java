@@ -27,6 +27,11 @@ public class Classroom extends Entity {
         cornerCoordinatesMap.put(Corner.BOTTOM_RIGHT, classroomCoordinatesCalculator.getCornerCoordinates(Corner.BOTTOM_RIGHT));
     }
 
+    /**
+     * Returns the coordinates for a given corner.
+     * @param corner the corner of the classroom
+     * @return corner's coordinates
+     */
     public Coordinates getCornerCoordinates(Corner corner) {
         return cornerCoordinatesMap.get(corner);
     }

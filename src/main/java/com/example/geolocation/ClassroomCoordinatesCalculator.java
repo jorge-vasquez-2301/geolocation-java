@@ -23,6 +23,11 @@ class ClassroomCoordinatesCalculator {
         distanceFromCenterToCorner = FastMath.sqrt(2 * (Classroom.SIZE / 2) * (Classroom.SIZE / 2));
     }
 
+    /**
+     * Return the coordinates for a given corner.
+     * @param corner the corner
+     * @return corner's coordinates
+     */
     Coordinates getCornerCoordinates(Classroom.Corner corner) {
         double bearingInRadians = FastMath.toRadians(corner.getBearingInDegrees());
         double sinOfLatitude = FastMath.sin(centerCoordinatesInRadians.getLatitude());
@@ -32,10 +37,10 @@ class ClassroomCoordinatesCalculator {
         double sinOfBearing = FastMath.sin(bearingInRadians);
         double cosOfBearing = FastMath.cos(bearingInRadians);
         double latitudeInRadians = FastMath.asin(sinOfLatitude * cosOfDistanceEarthRadiusRatio +
-                                                    cosOfLatitude * sinOfDistanceEarthRadiusRatio * cosOfBearing);
+                                                         cosOfLatitude * sinOfDistanceEarthRadiusRatio * cosOfBearing);
         double longitudeInRadians = centerCoordinatesInRadians.getLongitude() +
-                                    FastMath.atan2(sinOfBearing * sinOfDistanceEarthRadiusRatio * cosOfLatitude,
-                                                   cosOfDistanceEarthRadiusRatio - sinOfLatitude * FastMath.sin(latitudeInRadians));
+                FastMath.atan2(sinOfBearing * sinOfDistanceEarthRadiusRatio * cosOfLatitude,
+                               cosOfDistanceEarthRadiusRatio - sinOfLatitude * FastMath.sin(latitudeInRadians));
 
         return new Coordinates(FastMath.toDegrees(latitudeInRadians), FastMath.toDegrees(longitudeInRadians));
     }
